@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# Raw and generated data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Outputs
+outputs/models/*
+outputs/figures/*
+outputs/logs/*
+outputs/metrics/*
+!outputs/models/.gitkeep
+!outputs/figures/.gitkeep
+!outputs/logs/.gitkeep
+!outputs/metrics/.gitkeep
+
+# Local envs
+.env
+.venv/
+venv/
