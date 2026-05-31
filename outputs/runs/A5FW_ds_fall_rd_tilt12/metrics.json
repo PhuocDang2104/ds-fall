@@ -1,0 +1,1470 @@
+{
+  "fall": {
+    "accuracy": 0.9697309417040358,
+    "precision": 0.9108910891089109,
+    "recall": 0.8363636363636363,
+    "f1": 0.8720379146919431,
+    "confusion_matrix": [
+      [
+        773,
+        9
+      ],
+      [
+        18,
+        92
+      ]
+    ],
+    "classification_report": {
+      "non_fall": {
+        "precision": 0.97724399494311,
+        "recall": 0.9884910485933504,
+        "f1-score": 0.9828353464717101,
+        "support": 782.0
+      },
+      "fall": {
+        "precision": 0.9108910891089109,
+        "recall": 0.8363636363636363,
+        "f1-score": 0.8720379146919431,
+        "support": 110.0
+      },
+      "accuracy": 0.9697309417040358,
+      "macro avg": {
+        "precision": 0.9440675420260105,
+        "recall": 0.9124273424784933,
+        "f1-score": 0.9274366305818267,
+        "support": 892.0
+      },
+      "weighted avg": {
+        "precision": 0.9690614617124352,
+        "recall": 0.9697309417040358,
+        "f1-score": 0.9691719860504384,
+        "support": 892.0
+      }
+    }
+  },
+  "direction": {
+    "num_supervised": 98,
+    "accuracy": 0.6428571428571429,
+    "macro_f1": 0.6267770204479065,
+    "confusion_matrix": [
+      [
+        29,
+        6,
+        5
+      ],
+      [
+        3,
+        21,
+        3
+      ],
+      [
+        7,
+        11,
+        13
+      ]
+    ],
+    "classification_report": {
+      "forward": {
+        "precision": 0.7435897435897436,
+        "recall": 0.725,
+        "f1-score": 0.7341772151898734,
+        "support": 40.0
+      },
+      "backward": {
+        "precision": 0.5526315789473685,
+        "recall": 0.7777777777777778,
+        "f1-score": 0.6461538461538462,
+        "support": 27.0
+      },
+      "lateral": {
+        "precision": 0.6190476190476191,
+        "recall": 0.41935483870967744,
+        "f1-score": 0.5,
+        "support": 31.0
+      },
+      "accuracy": 0.6428571428571429,
+      "macro avg": {
+        "precision": 0.6384229805282438,
+        "recall": 0.6407108721624851,
+        "f1-score": 0.6267770204479065,
+        "support": 98.0
+      },
+      "weighted avg": {
+        "precision": 0.6515828425065805,
+        "recall": 0.6428571428571429,
+        "f1-score": 0.6358494127933549,
+        "support": 98.0
+      }
+    }
+  },
+  "per_dataset": {
+    "bits": {
+      "fall": {
+        "accuracy": 0.9810606060606061,
+        "precision": 1.0,
+        "recall": 0.7916666666666666,
+        "f1": 0.8837209302325582,
+        "confusion_matrix": [
+          [
+            480,
+            0
+          ],
+          [
+            10,
+            38
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.9795918367346939,
+            "recall": 1.0,
+            "f1-score": 0.9896907216494846,
+            "support": 480.0
+          },
+          "fall": {
+            "precision": 1.0,
+            "recall": 0.7916666666666666,
+            "f1-score": 0.8837209302325582,
+            "support": 48.0
+          },
+          "accuracy": 0.9810606060606061,
+          "macro avg": {
+            "precision": 0.9897959183673469,
+            "recall": 0.8958333333333333,
+            "f1-score": 0.9367058259410214,
+            "support": 528.0
+          },
+          "weighted avg": {
+            "precision": 0.9814471243042671,
+            "recall": 0.9810606060606061,
+            "f1-score": 0.9800571042479458,
+            "support": 528.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 36,
+        "accuracy": 0.7222222222222222,
+        "macro_f1": 0.7005291005291004,
+        "confusion_matrix": [
+          [
+            16,
+            0,
+            2
+          ],
+          [
+            0,
+            6,
+            0
+          ],
+          [
+            6,
+            2,
+            4
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.7272727272727273,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.8,
+            "support": 18.0
+          },
+          "backward": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 6.0
+          },
+          "lateral": {
+            "precision": 0.6666666666666666,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.4444444444444444,
+            "support": 12.0
+          },
+          "accuracy": 0.7222222222222222,
+          "macro avg": {
+            "precision": 0.7146464646464646,
+            "recall": 0.7407407407407408,
+            "f1-score": 0.7005291005291004,
+            "support": 36.0
+          },
+          "weighted avg": {
+            "precision": 0.710858585858586,
+            "recall": 0.7222222222222222,
+            "f1-score": 0.6910052910052911,
+            "support": 36.0
+          }
+        }
+      },
+      "bits_preprocessing": "20Hz row-order uniform interpolation to 50Hz"
+    },
+    "umafall": {
+      "fall": {
+        "accuracy": 0.9479166666666666,
+        "precision": 0.8648648648648649,
+        "recall": 0.8648648648648649,
+        "f1": 0.8648648648648649,
+        "confusion_matrix": [
+          [
+            150,
+            5
+          ],
+          [
+            5,
+            32
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.967741935483871,
+            "recall": 0.967741935483871,
+            "f1-score": 0.967741935483871,
+            "support": 155.0
+          },
+          "fall": {
+            "precision": 0.8648648648648649,
+            "recall": 0.8648648648648649,
+            "f1-score": 0.8648648648648649,
+            "support": 37.0
+          },
+          "accuracy": 0.9479166666666666,
+          "macro avg": {
+            "precision": 0.916303400174368,
+            "recall": 0.916303400174368,
+            "f1-score": 0.916303400174368,
+            "support": 192.0
+          },
+          "weighted avg": {
+            "precision": 0.9479166666666666,
+            "recall": 0.9479166666666666,
+            "f1-score": 0.9479166666666666,
+            "support": 192.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 37,
+        "accuracy": 0.4594594594594595,
+        "macro_f1": 0.4520923520923521,
+        "confusion_matrix": [
+          [
+            6,
+            5,
+            2
+          ],
+          [
+            1,
+            8,
+            3
+          ],
+          [
+            1,
+            8,
+            3
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.75,
+            "recall": 0.46153846153846156,
+            "f1-score": 0.5714285714285714,
+            "support": 13.0
+          },
+          "backward": {
+            "precision": 0.38095238095238093,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.48484848484848486,
+            "support": 12.0
+          },
+          "lateral": {
+            "precision": 0.375,
+            "recall": 0.25,
+            "f1-score": 0.3,
+            "support": 12.0
+          },
+          "accuracy": 0.4594594594594595,
+          "macro avg": {
+            "precision": 0.501984126984127,
+            "recall": 0.4594017094017094,
+            "f1-score": 0.4520923520923521,
+            "support": 37.0
+          },
+          "weighted avg": {
+            "precision": 0.5086872586872586,
+            "recall": 0.4594594594594595,
+            "f1-score": 0.4553176553176553,
+            "support": 37.0
+          }
+        }
+      },
+      "umafall_preprocessing": "20Hz timestamp interpolation to 50Hz using WRIST SensorTag"
+    },
+    "weda": {
+      "fall": {
+        "accuracy": 0.9593023255813954,
+        "precision": 0.8461538461538461,
+        "recall": 0.88,
+        "f1": 0.8627450980392157,
+        "confusion_matrix": [
+          [
+            143,
+            4
+          ],
+          [
+            3,
+            22
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.9794520547945206,
+            "recall": 0.9727891156462585,
+            "f1-score": 0.9761092150170648,
+            "support": 147.0
+          },
+          "fall": {
+            "precision": 0.8461538461538461,
+            "recall": 0.88,
+            "f1-score": 0.8627450980392157,
+            "support": 25.0
+          },
+          "accuracy": 0.9593023255813954,
+          "macro avg": {
+            "precision": 0.9128029504741834,
+            "recall": 0.9263945578231292,
+            "f1-score": 0.9194271565281402,
+            "support": 172.0
+          },
+          "weighted avg": {
+            "precision": 0.9600773151665156,
+            "recall": 0.9593023255813954,
+            "f1-score": 0.9596318724330751,
+            "support": 172.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 25,
+        "accuracy": 0.8,
+        "macro_f1": 0.8042328042328042,
+        "confusion_matrix": [
+          [
+            7,
+            1,
+            1
+          ],
+          [
+            2,
+            7,
+            0
+          ],
+          [
+            0,
+            1,
+            6
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.7777777777777778,
+            "recall": 0.7777777777777778,
+            "f1-score": 0.7777777777777778,
+            "support": 9.0
+          },
+          "backward": {
+            "precision": 0.7777777777777778,
+            "recall": 0.7777777777777778,
+            "f1-score": 0.7777777777777778,
+            "support": 9.0
+          },
+          "lateral": {
+            "precision": 0.8571428571428571,
+            "recall": 0.8571428571428571,
+            "f1-score": 0.8571428571428571,
+            "support": 7.0
+          },
+          "accuracy": 0.8,
+          "macro avg": {
+            "precision": 0.8042328042328042,
+            "recall": 0.8042328042328042,
+            "f1-score": 0.8042328042328042,
+            "support": 25.0
+          },
+          "weighted avg": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1-score": 0.8,
+            "support": 25.0
+          }
+        }
+      }
+    }
+  },
+  "per_subject": {
+    "bits/user17": {
+      "num_windows": 88,
+      "fall": {
+        "accuracy": 0.9772727272727273,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "confusion_matrix": [
+          [
+            80,
+            0
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.975609756097561,
+            "recall": 1.0,
+            "f1-score": 0.9876543209876543,
+            "support": 80.0
+          },
+          "fall": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1-score": 0.8571428571428571,
+            "support": 8.0
+          },
+          "accuracy": 0.9772727272727273,
+          "macro avg": {
+            "precision": 0.9878048780487805,
+            "recall": 0.875,
+            "f1-score": 0.9223985890652557,
+            "support": 88.0
+          },
+          "weighted avg": {
+            "precision": 0.9778270509977827,
+            "recall": 0.9772727272727273,
+            "f1-score": 0.9757896424563092,
+            "support": 88.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 6,
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.5833333333333334,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            0,
+            0
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.6,
+            "recall": 1.0,
+            "f1-score": 0.75,
+            "support": 3.0
+          },
+          "backward": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "lateral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.6666666666666666,
+          "macro avg": {
+            "precision": 0.5333333333333333,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5833333333333334,
+            "support": 6.0
+          },
+          "weighted avg": {
+            "precision": 0.4666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5416666666666666,
+            "support": 6.0
+          }
+        }
+      }
+    },
+    "bits/user27": {
+      "num_windows": 88,
+      "fall": {
+        "accuracy": 0.9886363636363636,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            80,
+            0
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.9876543209876543,
+            "recall": 1.0,
+            "f1-score": 0.9937888198757764,
+            "support": 80.0
+          },
+          "fall": {
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1-score": 0.9333333333333333,
+            "support": 8.0
+          },
+          "accuracy": 0.9886363636363636,
+          "macro avg": {
+            "precision": 0.9938271604938271,
+            "recall": 0.9375,
+            "f1-score": 0.9635610766045548,
+            "support": 88.0
+          },
+          "weighted avg": {
+            "precision": 0.988776655443322,
+            "recall": 0.9886363636363636,
+            "f1-score": 0.988292866553736,
+            "support": 88.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 6,
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.7222222222222222,
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 3.0
+          },
+          "backward": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "lateral": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 2.0
+          },
+          "accuracy": 0.6666666666666666,
+          "macro avg": {
+            "precision": 0.7222222222222222,
+            "recall": 0.7222222222222222,
+            "f1-score": 0.7222222222222222,
+            "support": 6.0
+          },
+          "weighted avg": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 6.0
+          }
+        }
+      }
+    },
+    "bits/user29": {
+      "num_windows": 88,
+      "fall": {
+        "accuracy": 0.9886363636363636,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            80,
+            0
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.9876543209876543,
+            "recall": 1.0,
+            "f1-score": 0.9937888198757764,
+            "support": 80.0
+          },
+          "fall": {
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1-score": 0.9333333333333333,
+            "support": 8.0
+          },
+          "accuracy": 0.9886363636363636,
+          "macro avg": {
+            "precision": 0.9938271604938271,
+            "recall": 0.9375,
+            "f1-score": 0.9635610766045548,
+            "support": 88.0
+          },
+          "weighted avg": {
+            "precision": 0.988776655443322,
+            "recall": 0.9886363636363636,
+            "f1-score": 0.988292866553736,
+            "support": 88.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 6,
+        "accuracy": 0.5,
+        "macro_f1": 0.4444444444444444,
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.6666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6666666666666666,
+            "support": 3.0
+          },
+          "backward": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "lateral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.5,
+          "macro avg": {
+            "precision": 0.38888888888888884,
+            "recall": 0.5555555555555555,
+            "f1-score": 0.4444444444444444,
+            "support": 6.0
+          },
+          "weighted avg": {
+            "precision": 0.4166666666666667,
+            "recall": 0.5,
+            "f1-score": 0.4444444444444444,
+            "support": 6.0
+          }
+        }
+      }
+    },
+    "bits/user31": {
+      "num_windows": 88,
+      "fall": {
+        "accuracy": 0.9772727272727273,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "confusion_matrix": [
+          [
+            80,
+            0
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.975609756097561,
+            "recall": 1.0,
+            "f1-score": 0.9876543209876543,
+            "support": 80.0
+          },
+          "fall": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1-score": 0.8571428571428571,
+            "support": 8.0
+          },
+          "accuracy": 0.9772727272727273,
+          "macro avg": {
+            "precision": 0.9878048780487805,
+            "recall": 0.875,
+            "f1-score": 0.9223985890652557,
+            "support": 88.0
+          },
+          "weighted avg": {
+            "precision": 0.9778270509977827,
+            "recall": 0.9772727272727273,
+            "f1-score": 0.9757896424563092,
+            "support": 88.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 6,
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.5079365079365079,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 3.0
+          },
+          "backward": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "lateral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.6666666666666666,
+          "macro avg": {
+            "precision": 0.4166666666666667,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5079365079365079,
+            "support": 6.0
+          },
+          "weighted avg": {
+            "precision": 0.4583333333333333,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5396825396825397,
+            "support": 6.0
+          }
+        }
+      }
+    },
+    "bits/user36": {
+      "num_windows": 88,
+      "fall": {
+        "accuracy": 0.9772727272727273,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "confusion_matrix": [
+          [
+            80,
+            0
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.975609756097561,
+            "recall": 1.0,
+            "f1-score": 0.9876543209876543,
+            "support": 80.0
+          },
+          "fall": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1-score": 0.8571428571428571,
+            "support": 8.0
+          },
+          "accuracy": 0.9772727272727273,
+          "macro avg": {
+            "precision": 0.9878048780487805,
+            "recall": 0.875,
+            "f1-score": 0.9223985890652557,
+            "support": 88.0
+          },
+          "weighted avg": {
+            "precision": 0.9778270509977827,
+            "recall": 0.9772727272727273,
+            "f1-score": 0.9757896424563092,
+            "support": 88.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 6,
+        "accuracy": 0.8333333333333334,
+        "macro_f1": 0.8412698412698413,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 3.0
+          },
+          "backward": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "lateral": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "accuracy": 0.8333333333333334,
+          "macro avg": {
+            "precision": 0.9166666666666666,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.8412698412698413,
+            "support": 6.0
+          },
+          "weighted avg": {
+            "precision": 0.875,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.8174603174603173,
+            "support": 6.0
+          }
+        }
+      }
+    },
+    "bits/user39": {
+      "num_windows": 88,
+      "fall": {
+        "accuracy": 0.9772727272727273,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "confusion_matrix": [
+          [
+            80,
+            0
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.975609756097561,
+            "recall": 1.0,
+            "f1-score": 0.9876543209876543,
+            "support": 80.0
+          },
+          "fall": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1-score": 0.8571428571428571,
+            "support": 8.0
+          },
+          "accuracy": 0.9772727272727273,
+          "macro avg": {
+            "precision": 0.9878048780487805,
+            "recall": 0.875,
+            "f1-score": 0.9223985890652557,
+            "support": 88.0
+          },
+          "weighted avg": {
+            "precision": 0.9778270509977827,
+            "recall": 0.9772727272727273,
+            "f1-score": 0.9757896424563092,
+            "support": 88.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 6,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "backward": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "lateral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 6.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 6.0
+          }
+        }
+      }
+    },
+    "umafall/subject_02": {
+      "num_windows": 69,
+      "fall": {
+        "accuracy": 0.8985507246376812,
+        "precision": 0.8,
+        "recall": 0.8421052631578947,
+        "f1": 0.8205128205128205,
+        "confusion_matrix": [
+          [
+            46,
+            4
+          ],
+          [
+            3,
+            16
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.9387755102040817,
+            "recall": 0.92,
+            "f1-score": 0.9292929292929293,
+            "support": 50.0
+          },
+          "fall": {
+            "precision": 0.8,
+            "recall": 0.8421052631578947,
+            "f1-score": 0.8205128205128205,
+            "support": 19.0
+          },
+          "accuracy": 0.8985507246376812,
+          "macro avg": {
+            "precision": 0.8693877551020408,
+            "recall": 0.8810526315789473,
+            "f1-score": 0.8749028749028749,
+            "support": 69.0
+          },
+          "weighted avg": {
+            "precision": 0.9005619639160012,
+            "recall": 0.8985507246376812,
+            "f1-score": 0.899338986295508,
+            "support": 69.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 19,
+        "accuracy": 0.47368421052631576,
+        "macro_f1": 0.47852147852147847,
+        "confusion_matrix": [
+          [
+            3,
+            2,
+            2
+          ],
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            0,
+            3,
+            3
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.75,
+            "recall": 0.42857142857142855,
+            "f1-score": 0.5454545454545454,
+            "support": 7.0
+          },
+          "backward": {
+            "precision": 0.375,
+            "recall": 0.5,
+            "f1-score": 0.42857142857142855,
+            "support": 6.0
+          },
+          "lateral": {
+            "precision": 0.42857142857142855,
+            "recall": 0.5,
+            "f1-score": 0.46153846153846156,
+            "support": 6.0
+          },
+          "accuracy": 0.47368421052631576,
+          "macro avg": {
+            "precision": 0.5178571428571429,
+            "recall": 0.4761904761904762,
+            "f1-score": 0.47852147852147847,
+            "support": 19.0
+          },
+          "weighted avg": {
+            "precision": 0.5300751879699248,
+            "recall": 0.47368421052631576,
+            "f1-score": 0.48204427151795576,
+            "support": 19.0
+          }
+        }
+      }
+    },
+    "umafall/subject_05": {
+      "num_windows": 68,
+      "fall": {
+        "accuracy": 0.9558823529411765,
+        "precision": 0.9411764705882353,
+        "recall": 0.8888888888888888,
+        "f1": 0.9142857142857143,
+        "confusion_matrix": [
+          [
+            49,
+            1
+          ],
+          [
+            2,
+            16
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.9607843137254902,
+            "recall": 0.98,
+            "f1-score": 0.9702970297029703,
+            "support": 50.0
+          },
+          "fall": {
+            "precision": 0.9411764705882353,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.9142857142857143,
+            "support": 18.0
+          },
+          "accuracy": 0.9558823529411765,
+          "macro avg": {
+            "precision": 0.9509803921568627,
+            "recall": 0.9344444444444444,
+            "f1-score": 0.9422913719943422,
+            "support": 68.0
+          },
+          "weighted avg": {
+            "precision": 0.9555940023068051,
+            "recall": 0.9558823529411765,
+            "f1-score": 0.9554705050336966,
+            "support": 68.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 18,
+        "accuracy": 0.4444444444444444,
+        "macro_f1": 0.37543859649122807,
+        "confusion_matrix": [
+          [
+            3,
+            3,
+            0
+          ],
+          [
+            0,
+            5,
+            1
+          ],
+          [
+            1,
+            5,
+            0
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.75,
+            "recall": 0.5,
+            "f1-score": 0.6,
+            "support": 6.0
+          },
+          "backward": {
+            "precision": 0.38461538461538464,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.5263157894736842,
+            "support": 6.0
+          },
+          "lateral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 6.0
+          },
+          "accuracy": 0.4444444444444444,
+          "macro avg": {
+            "precision": 0.3782051282051282,
+            "recall": 0.4444444444444445,
+            "f1-score": 0.37543859649122807,
+            "support": 18.0
+          },
+          "weighted avg": {
+            "precision": 0.37820512820512825,
+            "recall": 0.4444444444444444,
+            "f1-score": 0.37543859649122807,
+            "support": 18.0
+          }
+        }
+      }
+    },
+    "umafall/subject_09": {
+      "num_windows": 55,
+      "fall": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            55,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 55.0
+          },
+          "fall": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 55.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 55.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 0
+      }
+    },
+    "weda/U04": {
+      "num_windows": 101,
+      "fall": {
+        "accuracy": 0.9306930693069307,
+        "precision": 0.8461538461538461,
+        "recall": 0.88,
+        "f1": 0.8627450980392157,
+        "confusion_matrix": [
+          [
+            72,
+            4
+          ],
+          [
+            3,
+            22
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 0.96,
+            "recall": 0.9473684210526315,
+            "f1-score": 0.9536423841059603,
+            "support": 76.0
+          },
+          "fall": {
+            "precision": 0.8461538461538461,
+            "recall": 0.88,
+            "f1-score": 0.8627450980392157,
+            "support": 25.0
+          },
+          "accuracy": 0.9306930693069307,
+          "macro avg": {
+            "precision": 0.9030769230769231,
+            "recall": 0.9136842105263158,
+            "f1-score": 0.908193741072588,
+            "support": 101.0
+          },
+          "weighted avg": {
+            "precision": 0.9318202589489717,
+            "recall": 0.9306930693069307,
+            "f1-score": 0.9311430558716176,
+            "support": 101.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 25,
+        "accuracy": 0.8,
+        "macro_f1": 0.8042328042328042,
+        "confusion_matrix": [
+          [
+            7,
+            1,
+            1
+          ],
+          [
+            2,
+            7,
+            0
+          ],
+          [
+            0,
+            1,
+            6
+          ]
+        ],
+        "classification_report": {
+          "forward": {
+            "precision": 0.7777777777777778,
+            "recall": 0.7777777777777778,
+            "f1-score": 0.7777777777777778,
+            "support": 9.0
+          },
+          "backward": {
+            "precision": 0.7777777777777778,
+            "recall": 0.7777777777777778,
+            "f1-score": 0.7777777777777778,
+            "support": 9.0
+          },
+          "lateral": {
+            "precision": 0.8571428571428571,
+            "recall": 0.8571428571428571,
+            "f1-score": 0.8571428571428571,
+            "support": 7.0
+          },
+          "accuracy": 0.8,
+          "macro avg": {
+            "precision": 0.8042328042328042,
+            "recall": 0.8042328042328042,
+            "f1-score": 0.8042328042328042,
+            "support": 25.0
+          },
+          "weighted avg": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1-score": 0.8,
+            "support": 25.0
+          }
+        }
+      }
+    },
+    "weda/U24": {
+      "num_windows": 40,
+      "fall": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            40,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 40.0
+          },
+          "fall": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 40.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 40.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 0
+      }
+    },
+    "weda/U25": {
+      "num_windows": 31,
+      "fall": {
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "confusion_matrix": [
+          [
+            31,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "classification_report": {
+          "non_fall": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 31.0
+          },
+          "fall": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 31.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 31.0
+          }
+        }
+      },
+      "direction": {
+        "num_supervised": 0
+      }
+    }
+  },
+  "model_size": {
+    "params": 65959,
+    "fp32_bytes": 263836,
+    "fp32_kb": 257.65234375,
+    "estimated_int8_bytes": 65959,
+    "estimated_int8_kb": 64.4130859375
+  },
+  "inference_latency_ms": 58.573243333254744
+}

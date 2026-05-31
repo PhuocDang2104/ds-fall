@@ -1,0 +1,32 @@
+{
+  "feature_set": "tilt12",
+  "num_windows": 6414,
+  "nan_inf_before_feature_engineering": {
+    "nan": 0,
+    "inf": 0
+  },
+  "nan_inf_after_feature_engineering": {
+    "nan": 0,
+    "inf": 0
+  },
+  "supervised_direction_samples": 802,
+  "missing_direction_labels": 5612,
+  "impact_boundary_summary": {
+    "num_fall_windows": 883,
+    "early": 20,
+    "valid": 849,
+    "late": 14,
+    "early_pct": 2.2650056625141564,
+    "valid_pct": 96.14949037372594,
+    "late_pct": 1.5855039637599093
+  },
+  "warnings": [],
+  "distribution_paths": {
+    "windows_by_dataset": "outputs\\reports\\data_quality_windows_by_dataset.csv",
+    "windows_by_subject": "outputs\\reports\\data_quality_windows_by_subject.csv",
+    "fall_distribution": "outputs\\reports\\data_quality_fall_distribution.csv",
+    "direction_distribution": "outputs\\reports\\data_quality_direction_distribution.csv",
+    "direction_by_dataset": "outputs\\reports\\data_quality_direction_by_dataset.csv",
+    "direction_by_subject": "outputs\\reports\\data_quality_direction_by_subject.csv"
+  }
+}

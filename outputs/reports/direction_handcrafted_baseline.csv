@@ -1,0 +1,2 @@
+eval_split,num_train,num_eval,accuracy,macro_f1,warning,forward_precision,forward_recall,forward_f1,backward_precision,backward_recall,backward_f1,lateral_precision,lateral_recall,lateral_f1
+test,620,98,0.6530612244897959,0.6457857931542142,,0.7222222222222222,0.65,0.6842105263157895,0.6052631578947368,0.8518518518518519,0.7076923076923077,0.625,0.4838709677419355,0.5454545454545454

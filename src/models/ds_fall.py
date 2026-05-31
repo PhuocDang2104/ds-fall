@@ -3,6 +3,8 @@ from __future__ import annotations
 import tensorflow as tf
 from tensorflow.keras import Model, layers
 
+from src.data.features import feature_channel_names, stream_channel_indices, validate_feature_set
+
 
 def dsconv_block(
     x: tf.Tensor,
@@ -33,6 +35,10 @@ def _sensor_encoder(x: tf.Tensor, prefix: str) -> tf.Tensor:
     x = dsconv_block(x, 24, 5, name=f"{prefix}_dsconv1")
     x = dsconv_block(x, 32, 3, name=f"{prefix}_dsconv2")
     return x
+
+
+def _slice_channels(inputs: tf.Tensor, indices: list[int], name: str) -> tf.Tensor:
+    return layers.Lambda(lambda t, idx=indices: tf.gather(t, idx, axis=-1), name=name)(inputs)
 
 
 def dstcn_block(
@@ -84,12 +90,21 @@ def gated_attention_pooling(x: tf.Tensor, name: str = "gated_attention") -> tf.T
 def build_ds_fall_model(
     input_shape: tuple[int, int] = (100, 6),
     num_direction_classes: int = 3,
+    feature_set: str = "raw6",
     show_summary: bool = True,
 ) -> Model:
+    feature_set = validate_feature_set(feature_set)
+    expected_channels = len(feature_channel_names(feature_set))
+    if input_shape[-1] != expected_channels:
+        raise ValueError(
+            f"feature_set={feature_set!r} expects {expected_channels} channels, got input_shape={input_shape}"
+        )
+    acc_indices, gyro_indices = stream_channel_indices(feature_set)
+
     inputs = layers.Input(shape=input_shape, name="imu_input")
 
-    acc = layers.Lambda(lambda t: t[:, :, 0:3], name="acc_input")(inputs)
-    gyro = layers.Lambda(lambda t: t[:, :, 3:6], name="gyro_input")(inputs)
+    acc = _slice_channels(inputs, acc_indices, name="acc_input")
+    gyro = _slice_channels(inputs, gyro_indices, name="gyro_input")
 
     acc_features = _sensor_encoder(acc, "acc")
     gyro_features = _sensor_encoder(gyro, "gyro")
@@ -124,3 +139,82 @@ def build_ds_fall_model(
         model.summary()
         print(f"Total parameters: {model.count_params():,}")
     return model
+
+
+def build_ds_fall_rd_model(
+    input_shape: tuple[int, int] = (100, 12),
+    num_direction_classes: int = 3,
+    feature_set: str = "tilt12",
+    show_summary: bool = True,
+) -> Model:
+    feature_set = validate_feature_set(feature_set)
+    expected_channels = len(feature_channel_names(feature_set))
+    if input_shape[-1] != expected_channels:
+        raise ValueError(
+            f"feature_set={feature_set!r} expects {expected_channels} channels, got input_shape={input_shape}"
+        )
+    acc_indices, gyro_indices = stream_channel_indices(feature_set)
+
+    inputs = layers.Input(shape=input_shape, name="imu_input")
+
+    acc = _slice_channels(inputs, acc_indices, name="acc_input")
+    gyro = _slice_channels(inputs, gyro_indices, name="gyro_input")
+
+    acc_features = _sensor_encoder(acc, "acc")
+    gyro_features = _sensor_encoder(gyro, "gyro")
+
+    x = layers.Concatenate(name="sensor_concat")([acc_features, gyro_features])
+    x = layers.Conv1D(64, kernel_size=1, padding="same", name="fusion_pointwise_conv")(x)
+    x = layers.BatchNormalization(name="fusion_bn")(x)
+    x = layers.Activation("relu", name="fusion_relu")(x)
+
+    x = dstcn_block(x, channels=64, dilation=1, name="dstcn_d1")
+    x = dstcn_block(x, channels=64, dilation=2, name="dstcn_d2")
+    x = dstcn_block(x, channels=96, dilation=4, name="dstcn_d4")
+
+    fall_context = gated_attention_pooling(x, name="fall_attention_pooling")
+    direction_context = gated_attention_pooling(x, name="direction_attention_pooling")
+
+    fall = layers.Dense(32, activation="relu", name="fall_dense")(fall_context)
+    fall = layers.Dropout(0.2, name="fall_dropout")(fall)
+    fall_output = layers.Dense(2, activation="softmax", name="fall_output")(fall)
+
+    direction = layers.Dense(32, activation="relu", name="direction_dense")(direction_context)
+    direction = layers.Dropout(0.2, name="direction_dropout")(direction)
+    direction_output = layers.Dense(num_direction_classes, activation="softmax", name="direction_output")(direction)
+
+    model = Model(
+        inputs=inputs,
+        outputs={"fall_output": fall_output, "direction_output": direction_output},
+        name="DS-Fall-RD",
+    )
+
+    if show_summary:
+        model.summary()
+        print(f"Total parameters: {model.count_params():,}")
+    return model
+
+
+def build_model(
+    model_name: str,
+    input_shape: tuple[int, int],
+    feature_set: str,
+    num_direction_classes: int = 3,
+    show_summary: bool = True,
+) -> Model:
+    normalized = model_name.lower().replace("-", "_")
+    if normalized in {"ds_fall", "baseline"}:
+        return build_ds_fall_model(
+            input_shape=input_shape,
+            num_direction_classes=num_direction_classes,
+            feature_set=feature_set,
+            show_summary=show_summary,
+        )
+    if normalized in {"ds_fall_rd", "rd"}:
+        return build_ds_fall_rd_model(
+            input_shape=input_shape,
+            num_direction_classes=num_direction_classes,
+            feature_set=feature_set,
+            show_summary=show_summary,
+        )
+    raise ValueError(f"Unknown model_name={model_name!r}")

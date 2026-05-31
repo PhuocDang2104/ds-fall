@@ -1,0 +1,14 @@
+dataset,direction_label,count
+bits,backward,41
+bits,forward,121
+bits,lateral,82
+bits,none,3232
+bits,other,81
+umafall,backward,73
+umafall,forward,71
+umafall,lateral,64
+umafall,none,770
+weda,backward,126
+weda,forward,126
+weda,lateral,98
+weda,none,1529

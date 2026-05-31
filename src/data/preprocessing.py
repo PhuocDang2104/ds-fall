@@ -12,6 +12,8 @@ from src.utils.io import ensure_dir, save_json, save_pickle
 from .bits_loader import create_bits_windows
 from .common import has_nan_inf
 from .hifd_loader import create_hifd_windows
+from .units import harmonize_record_units
+from .umafall_loader import create_umafall_windows
 from .weda_loader import create_weda_windows
 
 
@@ -22,9 +24,10 @@ def _cfg(config: ProjectConfig | Any, name: str, default: Any = None) -> Any:
 def build_all_windows(config: ProjectConfig) -> tuple[np.ndarray, pd.DataFrame, dict[str, Any]]:
     all_records: list[dict[str, Any]] = []
     summary: dict[str, Any] = {"datasets": {}, "warnings": []}
+    enabled = set(_cfg(config, "enabled_datasets", ("weda", "bits", "umafall")))
 
     weda_dir = Path(_cfg(config, "weda_raw_dir"))
-    if weda_dir.exists():
+    if "weda" in enabled and weda_dir.exists():
         records = create_weda_windows(
             weda_dir,
             window_size=config.window_size,
@@ -34,13 +37,13 @@ def build_all_windows(config: ProjectConfig) -> tuple[np.ndarray, pd.DataFrame, 
         all_records.extend(records)
         summary["datasets"]["weda"] = {"windows": len(records), "raw_dir": str(weda_dir)}
         print(f"WEDA windows: {len(records)}")
-    else:
+    elif "weda" in enabled:
         msg = f"WARNING: missing WEDA raw folder: {weda_dir}; skipping."
         print(msg)
         summary["warnings"].append(msg)
 
     hifd_dir = Path(_cfg(config, "hifd_raw_dir"))
-    if hifd_dir.exists():
+    if "hifd" in enabled and hifd_dir.exists():
         records = create_hifd_windows(
             hifd_dir,
             window_size=config.window_size,
@@ -51,13 +54,13 @@ def build_all_windows(config: ProjectConfig) -> tuple[np.ndarray, pd.DataFrame, 
         all_records.extend(records)
         summary["datasets"]["hifd"] = {"windows": len(records), "raw_dir": str(hifd_dir)}
         print(f"HIFD windows: {len(records)}")
-    else:
+    elif "hifd" in enabled:
         msg = f"WARNING: missing HIFD raw folder: {hifd_dir}; skipping."
         print(msg)
         summary["warnings"].append(msg)
 
     bits_dir = Path(_cfg(config, "bits_raw_dir"))
-    if bits_dir.exists():
+    if "bits" in enabled and bits_dir.exists():
         records = create_bits_windows(
             bits_dir,
             window_size=config.window_size,
@@ -70,8 +73,26 @@ def build_all_windows(config: ProjectConfig) -> tuple[np.ndarray, pd.DataFrame, 
         all_records.extend(records)
         summary["datasets"]["bits"] = {"windows": len(records), "raw_dir": str(bits_dir)}
         print(f"BITS windows: {len(records)}")
-    else:
+    elif "bits" in enabled:
         msg = f"WARNING: missing BITS raw folder: {bits_dir}; skipping."
+        print(msg)
+        summary["warnings"].append(msg)
+
+    umafall_dir = Path(_cfg(config, "umafall_raw_dir"))
+    if "umafall" in enabled and umafall_dir.exists():
+        records = create_umafall_windows(
+            umafall_dir,
+            window_size=config.window_size,
+            stride=config.stride,
+            adl_cap_per_subject_activity=config.umafall_adl_cap,
+            sensor_positions=config.umafall_sensor_positions,
+            target_fs=config.umafall_target_fs,
+        )
+        all_records.extend(records)
+        summary["datasets"]["umafall"] = {"windows": len(records), "raw_dir": str(umafall_dir)}
+        print(f"UMAFall windows: {len(records)}")
+    elif "umafall" in enabled:
+        msg = f"WARNING: missing UMAFall raw folder: {umafall_dir}; skipping."
         print(msg)
         summary["warnings"].append(msg)
 
@@ -80,6 +101,12 @@ def build_all_windows(config: ProjectConfig) -> tuple[np.ndarray, pd.DataFrame, 
         return empty, pd.DataFrame(), summary
 
     all_records = _filter_valid_records(all_records, config.window_size)
+    all_records, unit_summary = harmonize_record_units(
+        all_records,
+        _cfg(config, "dataset_unit_map", {}),
+    )
+    all_records = _filter_valid_records(all_records, config.window_size)
+    summary["unit_harmonization"] = unit_summary
     X = np.stack([rec.pop("X") for rec in all_records]).astype(np.float32)
     metadata = create_metadata_dataframe(all_records)
     summary.update(build_preprocessing_summary(X, metadata))
@@ -175,6 +202,10 @@ def build_preprocessing_summary(X: np.ndarray, metadata: pd.DataFrame) -> dict[s
         if not bits_meta.empty:
             summary["bits_original_length"] = bits_meta["original_length"].describe().to_dict()
             summary["bits_resampled_length"] = bits_meta["resampled_length"].describe().to_dict()
+        umafall_meta = metadata[metadata["dataset"] == "umafall"]
+        if not umafall_meta.empty:
+            summary["umafall_original_length"] = umafall_meta["original_length"].describe().to_dict()
+            summary["umafall_resampled_length"] = umafall_meta["resampled_length"].describe().to_dict()
     return summary
 
 

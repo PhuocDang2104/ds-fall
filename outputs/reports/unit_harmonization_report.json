@@ -1,0 +1,45 @@
+{
+  "target_acc_unit": "m/s^2",
+  "target_gyro_unit": "rad/s",
+  "records_by_dataset": {
+    "weda": 1879,
+    "hifd": 1329,
+    "bits": 3557,
+    "umafall": 978
+  },
+  "dataset_unit_map": {
+    "bits": {
+      "acc_unit_before": "m/s^2",
+      "gyro_unit_before": "rad/s",
+      "acc_unit_after": "m/s^2",
+      "gyro_unit_after": "rad/s",
+      "conversion_factor_acc": 1.0,
+      "conversion_factor_gyro": 1.0
+    },
+    "weda": {
+      "acc_unit_before": "m/s^2",
+      "gyro_unit_before": "rad/s",
+      "acc_unit_after": "m/s^2",
+      "gyro_unit_after": "rad/s",
+      "conversion_factor_acc": 1.0,
+      "conversion_factor_gyro": 1.0
+    },
+    "umafall": {
+      "acc_unit_before": "g",
+      "gyro_unit_before": "deg/s",
+      "acc_unit_after": "m/s^2",
+      "gyro_unit_after": "rad/s",
+      "conversion_factor_acc": 9.80665,
+      "conversion_factor_gyro": 0.017453292519943295
+    },
+    "hifd": {
+      "acc_unit_before": "m/s^2 (loader converted from g)",
+      "gyro_unit_before": "deg/s",
+      "acc_unit_after": "m/s^2",
+      "gyro_unit_after": "rad/s",
+      "conversion_factor_acc": 1.0,
+      "conversion_factor_gyro": 0.017453292519943295
+    }
+  },
+  "warnings": []
+}
