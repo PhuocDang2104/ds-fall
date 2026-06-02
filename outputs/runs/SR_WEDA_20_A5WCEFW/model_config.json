@@ -1,0 +1,21 @@
+{
+  "id": "WEDA-20",
+  "dataset": "weda",
+  "sampling_rate": 20.0,
+  "window_length": 40,
+  "source": "weda_downsample20",
+  "note": "WEDA downsampled from 50 Hz to 20 Hz before windowing.",
+  "model": "A5WCEFW",
+  "model_name": "ds_fall_rd",
+  "feature_set": "tilt12",
+  "direction_loss_type": "weighted_ce",
+  "lambda_fall": 1.0,
+  "lambda_direction": 1.5,
+  "fall_loss_weighted": true,
+  "augment": false,
+  "input_shape": [
+    40,
+    12
+  ],
+  "learning_rate": 0.001
+}

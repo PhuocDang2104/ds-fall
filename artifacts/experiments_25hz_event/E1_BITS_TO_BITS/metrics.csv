@@ -1,0 +1,2 @@
+experiment_id,train_dataset,test_dataset,sampling_rate,input_shape,n_train,n_val,n_test,fall_f1,fall_precision,fall_recall,fall_accuracy,direction_macro_f1,direction_accuracy,direction_n_supervised,best_epoch,best_val_loss,model_params,model_size_float32_kb,model_size_int8_kb_if_available,inference_latency_ms
+E1_BITS_TO_BITS,bits,bits,25.0,"(50, 12)",2504,528,528,0.8888888888888888,0.9523809523809523,0.8333333333333334,0.9810606060606061,0.8777348777348778,0.8888888888888888,36,16,0.41136667132377625,65959,257.65234375,64.4130859375,96.79713333331772

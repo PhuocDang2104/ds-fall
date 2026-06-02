@@ -1,0 +1,17 @@
+{
+  "id": "E1",
+  "experiment_type": "train2_test1_bits_weda_hifd",
+  "train_datasets": [
+    "bits",
+    "weda"
+  ],
+  "test_datasets": [
+    "hifd"
+  ],
+  "train_split": "train",
+  "val_split": "val",
+  "test_split": null,
+  "note": "Train BITS+WEDA, test all HIFD windows. UMAFall is filtered out before splits.",
+  "model": "A5WCEFW",
+  "learning_rate": 0.001
+}

@@ -1,0 +1,16 @@
+{
+  "id": "DS_WEDA",
+  "experiment_type": "dataset_specific",
+  "train_datasets": [
+    "weda"
+  ],
+  "test_datasets": [
+    "weda"
+  ],
+  "train_split": "train",
+  "val_split": "val",
+  "test_split": "test",
+  "note": "Existing split within one dataset.",
+  "model": "A5WCEFW",
+  "learning_rate": 0.001
+}

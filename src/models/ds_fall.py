@@ -195,6 +195,78 @@ def build_ds_fall_rd_model(
     return model
 
 
+def build_ds_fall_hier_dir_model(
+    input_shape: tuple[int, int] = (100, 12),
+    feature_set: str = "tilt12",
+    use_summary_branch: bool = False,
+    summary_shape: tuple[int, ...] = (12,),
+    show_summary: bool = True,
+) -> Model:
+    feature_set = validate_feature_set(feature_set)
+    expected_channels = len(feature_channel_names(feature_set))
+    if input_shape[-1] != expected_channels:
+        raise ValueError(
+            f"feature_set={feature_set!r} expects {expected_channels} channels, got input_shape={input_shape}"
+        )
+    acc_indices, gyro_indices = stream_channel_indices(feature_set)
+
+    imu_input = layers.Input(shape=input_shape, name="imu_input")
+
+    acc = _slice_channels(imu_input, acc_indices, name="acc_input")
+    gyro = _slice_channels(imu_input, gyro_indices, name="gyro_input")
+
+    acc_features = _sensor_encoder(acc, "acc")
+    gyro_features = _sensor_encoder(gyro, "gyro")
+
+    x = layers.Concatenate(name="sensor_concat")([acc_features, gyro_features])
+    x = layers.Conv1D(64, kernel_size=1, padding="same", name="fusion_pointwise_conv")(x)
+    x = layers.BatchNormalization(name="fusion_bn")(x)
+    x = layers.Activation("relu", name="fusion_relu")(x)
+
+    x = dstcn_block(x, channels=64, dilation=1, name="dstcn_d1")
+    x = dstcn_block(x, channels=64, dilation=2, name="dstcn_d2")
+    x = dstcn_block(x, channels=96, dilation=4, name="dstcn_d4")
+
+    fall_context = gated_attention_pooling(x, name="fall_attention_pooling")
+    plane_context = gated_attention_pooling(x, name="plane_attention_pooling")
+    sagittal_context = gated_attention_pooling(x, name="sagittal_attention_pooling")
+
+    model_inputs: tf.Tensor | dict[str, tf.Tensor] = imu_input
+    if use_summary_branch:
+        summary_input = layers.Input(shape=summary_shape, name="summary_input")
+        summary_embedding = layers.Dense(16, activation="relu", name="direction_summary_dense")(summary_input)
+        plane_context = layers.Concatenate(name="plane_summary_concat")([plane_context, summary_embedding])
+        sagittal_context = layers.Concatenate(name="sagittal_summary_concat")([sagittal_context, summary_embedding])
+        model_inputs = {"imu_input": imu_input, "summary_input": summary_input}
+
+    fall = layers.Dense(32, activation="relu", name="fall_dense")(fall_context)
+    fall = layers.Dropout(0.2, name="fall_dropout")(fall)
+    fall_output = layers.Dense(2, activation="softmax", name="fall_output")(fall)
+
+    plane = layers.Dense(32, activation="relu", name="plane_dense")(plane_context)
+    plane = layers.Dropout(0.2, name="plane_dropout")(plane)
+    plane_output = layers.Dense(2, activation="softmax", name="plane_output")(plane)
+
+    sagittal = layers.Dense(32, activation="relu", name="sagittal_dense")(sagittal_context)
+    sagittal = layers.Dropout(0.2, name="sagittal_dropout")(sagittal)
+    sagittal_output = layers.Dense(2, activation="softmax", name="sagittal_output")(sagittal)
+
+    model = Model(
+        inputs=model_inputs,
+        outputs={
+            "fall_output": fall_output,
+            "plane_output": plane_output,
+            "sagittal_output": sagittal_output,
+        },
+        name="DS-Fall-A10-Hier-Dir" if not use_summary_branch else "DS-Fall-A11-Hier-Dir-Summary",
+    )
+
+    if show_summary:
+        model.summary()
+        print(f"Total parameters: {model.count_params():,}")
+    return model
+
+
 def build_model(
     model_name: str,
     input_shape: tuple[int, int],
@@ -215,6 +287,20 @@ def build_model(
             input_shape=input_shape,
             num_direction_classes=num_direction_classes,
             feature_set=feature_set,
+            show_summary=show_summary,
+        )
+    if normalized in {"ds_fall_hier_dir", "a10_hier_dir", "hier_dir"}:
+        return build_ds_fall_hier_dir_model(
+            input_shape=input_shape,
+            feature_set=feature_set,
+            use_summary_branch=False,
+            show_summary=show_summary,
+        )
+    if normalized in {"ds_fall_hier_dir_summary", "a11_hier_dir_summary", "hier_dir_summary"}:
+        return build_ds_fall_hier_dir_model(
+            input_shape=input_shape,
+            feature_set=feature_set,
+            use_summary_branch=True,
             show_summary=show_summary,
         )
     raise ValueError(f"Unknown model_name={model_name!r}")

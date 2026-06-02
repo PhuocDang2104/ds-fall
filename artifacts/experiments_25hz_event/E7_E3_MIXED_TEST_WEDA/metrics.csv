@@ -1,0 +1,2 @@
+n_test,fall_accuracy,fall_precision,fall_recall,fall_f1,direction_n_supervised,direction_accuracy,direction_macro_f1,forward_f1,backward_f1,lateral_f1
+180,0.8777777777777778,0.5333333333333333,0.96,0.6857142857142857,25,0.84,0.8390350877192981,0.8421052631578947,0.875,0.8

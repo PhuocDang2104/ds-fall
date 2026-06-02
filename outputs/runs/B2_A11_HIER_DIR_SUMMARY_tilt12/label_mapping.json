@@ -1,0 +1,21 @@
+{
+  "fall": {
+    "non_fall": 0,
+    "fall": 1
+  },
+  "direction": {
+    "forward": 0,
+    "backward": 1,
+    "lateral": 2,
+    "none": -1,
+    "other": -1
+  },
+  "plane": {
+    "sagittal": 0,
+    "lateral": 1
+  },
+  "sagittal": {
+    "forward": 0,
+    "backward": 1
+  }
+}

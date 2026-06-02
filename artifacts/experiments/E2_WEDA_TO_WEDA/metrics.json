@@ -1,0 +1,141 @@
+{
+  "fall": {
+    "accuracy": 0.9319470699432892,
+    "precision": 0.6081081081081081,
+    "recall": 0.8653846153846154,
+    "f1": 0.7142857142857143,
+    "confusion_matrix": [
+      [
+        1344,
+        87
+      ],
+      [
+        21,
+        135
+      ]
+    ],
+    "classification_report": {
+      "non_fall": {
+        "precision": 0.9846153846153847,
+        "recall": 0.939203354297694,
+        "f1-score": 0.9613733905579399,
+        "support": 1431.0
+      },
+      "fall": {
+        "precision": 0.6081081081081081,
+        "recall": 0.8653846153846154,
+        "f1-score": 0.7142857142857143,
+        "support": 156.0
+      },
+      "accuracy": 0.9319470699432892,
+      "macro avg": {
+        "precision": 0.7963617463617464,
+        "recall": 0.9022939848411546,
+        "f1-score": 0.8378295524218271,
+        "support": 1587.0
+      },
+      "weighted avg": {
+        "precision": 0.9476052175485067,
+        "recall": 0.9319470699432892,
+        "f1-score": 0.937084998939498,
+        "support": 1587.0
+      }
+    }
+  },
+  "direction": {
+    "num_supervised": 156,
+    "accuracy": 0.7371794871794872,
+    "macro_f1": 0.7269320518905236,
+    "confusion_matrix": [
+      [
+        52,
+        3,
+        0
+      ],
+      [
+        10,
+        34,
+        10
+      ],
+      [
+        11,
+        7,
+        29
+      ]
+    ],
+    "classification_report": {
+      "forward": {
+        "precision": 0.7123287671232876,
+        "recall": 0.9454545454545454,
+        "f1-score": 0.8125,
+        "support": 55.0
+      },
+      "backward": {
+        "precision": 0.7727272727272727,
+        "recall": 0.6296296296296297,
+        "f1-score": 0.6938775510204082,
+        "support": 54.0
+      },
+      "lateral": {
+        "precision": 0.7435897435897436,
+        "recall": 0.6170212765957447,
+        "f1-score": 0.6744186046511628,
+        "support": 47.0
+      },
+      "accuracy": 0.7371794871794872,
+      "macro avg": {
+        "precision": 0.7428819278134347,
+        "recall": 0.73070181722664,
+        "f1-score": 0.7269320518905236,
+        "support": 156.0
+      },
+      "weighted avg": {
+        "precision": 0.7426543132549455,
+        "recall": 0.7371794871794872,
+        "f1-score": 0.7298369370109403,
+        "support": 156.0
+      }
+    }
+  },
+  "per_dataset": [
+    {
+      "dataset": "weda",
+      "n_test": 1587,
+      "fall_accuracy": 0.9319470699432892,
+      "fall_precision": 0.6081081081081081,
+      "fall_recall": 0.8653846153846154,
+      "fall_f1": 0.7142857142857143,
+      "direction_n_supervised": 156,
+      "direction_accuracy": 0.7371794871794872,
+      "direction_macro_f1": 0.7269320518905236
+    }
+  ],
+  "model_size": {
+    "params": 65959,
+    "model_size_float32_kb": 257.65234375,
+    "model_size_int8_kb_if_available": 64.4130859375
+  },
+  "best_epoch": 13,
+  "best_val_loss": 0.2259383201599121,
+  "train_seconds": 232.0003369000001,
+  "inference_latency_ms": 91.19197333334341,
+  "class_weights": {
+    "fall": [
+      0.5591905117034912,
+      4.723649501800537
+    ],
+    "direction": [
+      0.9225931167602539,
+      0.9334312081336975,
+      1.183736801147461
+    ]
+  },
+  "split_counts": {
+    "train": 18016,
+    "val": 2441,
+    "test": 1587,
+    "train_direction_supervised": 1907,
+    "val_direction_supervised": 161,
+    "test_direction_supervised": 156
+  }
+}

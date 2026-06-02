@@ -1,0 +1,17 @@
+{
+  "feature_set": "tilt12",
+  "channel_names": [
+    "ax",
+    "ay",
+    "az",
+    "gx",
+    "gy",
+    "gz",
+    "acc_mag",
+    "gyro_mag",
+    "jerk",
+    "roll",
+    "pitch",
+    "tilt_delta"
+  ]
+}

@@ -1,0 +1,2 @@
+dataset,n_test,fall_accuracy,fall_precision,fall_recall,fall_f1,direction_n_supervised,direction_accuracy,direction_macro_f1
+bits,7706,0.5695561899818323,0.20259208731241474,0.12147239263803682,0.15187931475326003,1635,0.6507645259938838,0.5900972669769663

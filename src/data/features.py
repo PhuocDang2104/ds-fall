@@ -231,5 +231,108 @@ def handcrafted_direction_features(
     return _finite(out), feature_names
 
 
+def direction_summary_features(
+    X_raw6: np.ndarray,
+    fs: float = 50.0,
+    pre_steps: int = 20,
+    post_steps: int = 20,
+) -> tuple[np.ndarray, list[str]]:
+    """Signed physics summaries used only by direction heads."""
+    X = np.asarray(X_raw6, dtype=np.float32)
+    if X.ndim != 3 or X.shape[-1] != 6:
+        raise ValueError(f"Expected X_raw6 with shape (N, T, 6), got {X.shape}")
+
+    dt = 1.0 / float(fs)
+    acc = X[:, :, :3]
+    gyro = X[:, :, 3:6]
+    roll = np.unwrap(np.arctan2(acc[:, :, 1], acc[:, :, 2]), axis=1)
+    pitch = np.unwrap(
+        np.arctan2(-acc[:, :, 0], np.sqrt(np.maximum(acc[:, :, 1] ** 2 + acc[:, :, 2] ** 2, 0.0) + 1e-8)),
+        axis=1,
+    )
+    pre = slice(0, min(pre_steps, X.shape[1]))
+    post = slice(max(0, X.shape[1] - post_steps), X.shape[1])
+
+    pre_roll = roll[:, pre].mean(axis=1)
+    post_roll = roll[:, post].mean(axis=1)
+    pre_pitch = pitch[:, pre].mean(axis=1)
+    post_pitch = pitch[:, post].mean(axis=1)
+
+    out = np.column_stack(
+        [
+            gyro[:, :, 0].sum(axis=1) * dt,
+            gyro[:, :, 1].sum(axis=1) * dt,
+            gyro[:, :, 2].sum(axis=1) * dt,
+            _signed_peak(gyro[:, :, 0]),
+            _signed_peak(gyro[:, :, 1]),
+            _signed_peak(gyro[:, :, 2]),
+            post_roll - pre_roll,
+            post_pitch - pre_pitch,
+            pre_roll,
+            post_roll,
+            pre_pitch,
+            post_pitch,
+        ]
+    ).astype(np.float32)
+    names = [
+        "integrated_gx",
+        "integrated_gy",
+        "integrated_gz",
+        "peak_signed_gx",
+        "peak_signed_gy",
+        "peak_signed_gz",
+        "delta_roll_window",
+        "delta_pitch_window",
+        "pre_roll_mean",
+        "post_roll_mean",
+        "pre_pitch_mean",
+        "post_pitch_mean",
+    ]
+    return _finite(out), names
+
+
+def fit_summary_scaler(
+    X_summary: np.ndarray,
+    metadata: pd.DataFrame,
+    split_col: str = "split",
+    train_split: str = "train",
+    eps: float = 1e-6,
+) -> dict[str, Any]:
+    X = np.asarray(X_summary, dtype=np.float32)
+    if len(X) != len(metadata):
+        raise ValueError("X_summary and metadata length mismatch")
+    if split_col not in metadata:
+        raise ValueError(f"metadata must contain {split_col!r} to fit summary scaler")
+    train_mask = metadata[split_col].to_numpy() == train_split
+    if not train_mask.any():
+        raise ValueError(f"No samples found for {split_col}={train_split!r}")
+    train_x = X[train_mask]
+    mean = train_x.mean(axis=0).astype(np.float32)
+    std = train_x.std(axis=0).astype(np.float32)
+    std = np.where(std < eps, 1.0, std).astype(np.float32)
+    _, names = direction_summary_features(np.zeros((1, 100, 6), dtype=np.float32))
+    return {
+        "feature_names": names,
+        "mean": mean.tolist(),
+        "std": std.tolist(),
+        "fit_split": train_split,
+        "eps": float(eps),
+    }
+
+
+def transform_summary_features(X_summary: np.ndarray, scaler: dict[str, Any]) -> np.ndarray:
+    X = np.asarray(X_summary, dtype=np.float32)
+    mean = np.asarray(scaler["mean"], dtype=np.float32).reshape(1, -1)
+    std = np.asarray(scaler["std"], dtype=np.float32).reshape(1, -1)
+    if X.shape[-1] != mean.shape[-1]:
+        raise ValueError(f"Summary scaler expects {mean.shape[-1]} features, got {X.shape[-1]}")
+    return _finite(((X - mean) / std).astype(np.float32))
+
+
+def _signed_peak(values: np.ndarray) -> np.ndarray:
+    idx = np.argmax(np.abs(values), axis=1)
+    return values[np.arange(values.shape[0]), idx]
+
+
 def _finite(arr: np.ndarray) -> np.ndarray:
     return np.nan_to_num(arr, nan=0.0, posinf=0.0, neginf=0.0).astype(np.float32)

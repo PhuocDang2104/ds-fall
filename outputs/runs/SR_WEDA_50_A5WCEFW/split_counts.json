@@ -1,0 +1,8 @@
+{
+  "train": 1488,
+  "val": 219,
+  "test": 172,
+  "train_direction": 300,
+  "val_direction": 25,
+  "test_direction": 25
+}

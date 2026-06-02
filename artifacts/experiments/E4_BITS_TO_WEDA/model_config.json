@@ -1,0 +1,25 @@
+{
+  "model": "A5WCEFW",
+  "model_name": "ds_fall_rd",
+  "feature_set": "tilt12",
+  "input_shape": [
+    50,
+    12
+  ],
+  "sampling_rate": 25.0,
+  "window_seconds": 2.0,
+  "window_size": 50,
+  "stride_seconds": 0.5,
+  "stride_size": 12,
+  "direction_loss_type": "weighted_ce",
+  "lambda_fall": 1.0,
+  "lambda_direction": 1.5,
+  "fall_loss_weighted": true,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "batch_size": 64,
+  "max_epochs": 80,
+  "early_stopping_patience": 10,
+  "reduce_lr_patience": 5,
+  "seed": 42
+}

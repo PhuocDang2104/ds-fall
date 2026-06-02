@@ -1,0 +1,18 @@
+{
+  "id": "T3_HIFD",
+  "experiment_type": "train3_test1",
+  "train_datasets": [
+    "bits",
+    "weda",
+    "umafall"
+  ],
+  "test_datasets": [
+    "hifd"
+  ],
+  "train_split": "train",
+  "val_split": "val",
+  "test_split": null,
+  "note": "Held-out test dataset uses all its windows; it is never used for scaler or early stopping.",
+  "model": "A5WCEFW",
+  "learning_rate": 0.001
+}

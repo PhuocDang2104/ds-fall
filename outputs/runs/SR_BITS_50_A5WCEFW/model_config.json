@@ -1,0 +1,21 @@
+{
+  "id": "BITS-50",
+  "dataset": "bits",
+  "sampling_rate": 50.0,
+  "window_length": 100,
+  "source": "processed50",
+  "note": "Current BITS pipeline: 20 Hz raw upsampled to 50 Hz.",
+  "model": "A5WCEFW",
+  "model_name": "ds_fall_rd",
+  "feature_set": "tilt12",
+  "direction_loss_type": "weighted_ce",
+  "lambda_fall": 1.0,
+  "lambda_direction": 1.5,
+  "fall_loss_weighted": true,
+  "augment": false,
+  "input_shape": [
+    100,
+    12
+  ],
+  "learning_rate": 0.001
+}

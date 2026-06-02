@@ -1,0 +1,2 @@
+experiment_id,train_dataset,test_dataset,sampling_rate,input_shape,n_train,n_val,n_test,fall_f1,fall_precision,fall_recall,fall_accuracy,direction_macro_f1,direction_accuracy,direction_n_supervised,best_epoch,best_val_loss,model_params,model_size_float32_kb,model_size_int8_kb_if_available,inference_latency_ms
+E3_BITS_WEDA_MIXED,bits+weda,bits+weda,25.0,"(50, 12)",3999,748,708,0.8322981366459627,0.7613636363636364,0.9178082191780822,0.961864406779661,0.8966626725247414,0.9016393442622951,61,41,0.5923778414726257,65959,257.65234375,64.4130859375,96.25339333333613

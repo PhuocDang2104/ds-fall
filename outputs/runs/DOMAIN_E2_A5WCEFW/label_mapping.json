@@ -1,0 +1,13 @@
+{
+  "fall": {
+    "non_fall": 0,
+    "fall": 1
+  },
+  "direction": {
+    "forward": 0,
+    "backward": 1,
+    "lateral": 2,
+    "none": -1,
+    "other": -1
+  }
+}

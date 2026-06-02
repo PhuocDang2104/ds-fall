@@ -1,0 +1,22 @@
+{
+  "feature_set": "tilt12",
+  "feature_order": [
+    "ax",
+    "ay",
+    "az",
+    "gx",
+    "gy",
+    "gz",
+    "acc_mag",
+    "gyro_mag",
+    "jerk",
+    "roll",
+    "pitch",
+    "tilt_delta"
+  ],
+  "sampling_rate": 25.0,
+  "window_seconds": 2.0,
+  "window_size": 50,
+  "stride_seconds": 0.5,
+  "stride_size": 12
+}

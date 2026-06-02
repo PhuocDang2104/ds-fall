@@ -1,0 +1,15 @@
+=== DS-Fall-RD A5WCEFW 25 Hz pipeline ===
+project_root=C:\Users\ADMIN\Desktop\ds-fall
+sampling_rate=25 Hz, window_size=50, input_shape=(50, 12)
+
+[1/3] Building BITS 20 Hz -> 25 Hz windows...
+BITS records: 61531
+
+[2/3] Building WEDA-FALL raw 25Hz windows...
+WEDA raw 25Hz folder: C:\Users\ADMIN\Desktop\ds-fall\data\raw\WEDA-FALL-main\dataset\25Hz
+WEDA records: 22044
+
+[3/3] Mandatory dataset audit before training
+dataset                                                       source_folder  original_sampling_rate  target_sampling_rate  n_subjects  n_trials  n_windows  fall_windows  non_fall_windows  direction_supervised_windows  acc_mag_median  gyro_mag_p99   feature_shape  nan_count  inf_count
+   bits                     C:\Users\ADMIN\Desktop\ds-fall\data\raw\Dataset                    20.0                  25.0          41       975      61531         21775             39756                         15451        9.851161      7.018018 (61531, 50, 12)          0          0
+   weda C:\Users\ADMIN\Desktop\ds-fall\data\raw\WEDA-FALL-main\dataset\25Hz                    25.0                  25.0          25       969      22044          2224             19820                          2224        9.842140      7.862398 (22044, 50, 12)          0          0

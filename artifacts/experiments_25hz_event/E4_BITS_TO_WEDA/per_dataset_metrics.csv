@@ -1,0 +1,2 @@
+dataset,n_test,fall_accuracy,fall_precision,fall_recall,fall_f1,direction_n_supervised,direction_accuracy,direction_macro_f1
+weda,180,0.7444444444444445,0.34328358208955223,0.92,0.5,25,0.4,0.3876262626262626

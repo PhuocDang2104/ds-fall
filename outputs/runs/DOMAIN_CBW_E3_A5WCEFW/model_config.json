@@ -1,0 +1,18 @@
+{
+  "id": "CBW_E3",
+  "experiment_type": "clean_bits_weda_mixed",
+  "train_datasets": [
+    "bits",
+    "weda"
+  ],
+  "test_datasets": [
+    "bits",
+    "weda"
+  ],
+  "train_split": "train",
+  "val_split": "val",
+  "test_split": "test",
+  "note": "Train BITS+WEDA train splits, validate on BITS+WEDA val splits, test on BITS+WEDA test splits.",
+  "model": "A5WCEFW",
+  "learning_rate": 0.001
+}

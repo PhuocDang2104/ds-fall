@@ -1,0 +1,16 @@
+{
+  "id": "CBW_E1",
+  "experiment_type": "clean_bits_weda",
+  "train_datasets": [
+    "bits"
+  ],
+  "test_datasets": [
+    "weda"
+  ],
+  "train_split": "train",
+  "val_split": "val",
+  "test_split": null,
+  "note": "Train BITS only; test all WEDA windows. HIFD/UMAFall are filtered out before splits.",
+  "model": "A5WCEFW",
+  "learning_rate": 0.001
+}
