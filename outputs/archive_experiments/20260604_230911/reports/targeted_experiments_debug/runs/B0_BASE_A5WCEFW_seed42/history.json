@@ -1,0 +1,44 @@
+{
+  "direction_output_accuracy": [
+    0.17104275524616241
+  ],
+  "direction_output_loss": [
+    0.13845163583755493
+  ],
+  "fall_output_accuracy": [
+    0.8659664988517761
+  ],
+  "fall_output_loss": [
+    0.3354529142379761
+  ],
+  "loss": [
+    0.5426881909370422
+  ],
+  "val_direction_output_accuracy": [
+    0.0882352963089943
+  ],
+  "val_direction_output_loss": [
+    0.10292164236307144
+  ],
+  "val_fall_output_accuracy": [
+    0.9024063944816589
+  ],
+  "val_fall_output_loss": [
+    0.6569089293479919
+  ],
+  "val_loss": [
+    0.7413746118545532
+  ],
+  "val_fall_f1": [
+    0.0
+  ],
+  "val_direction_macro_f1": [
+    0.15535444947209653
+  ],
+  "val_domain_score": [
+    0.15535444947209653
+  ],
+  "learning_rate": [
+    0.0010000000474974513
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "FV-Lite10": [
+    "acc_mag_range",
+    "acc_mag_max",
+    "acc_mag_std",
+    "gyro_mag_p95",
+    "gyro_mag_mean",
+    "jerk_p95",
+    "jerk_std",
+    "tilt_delta_p95",
+    "post_acc_mag_std",
+    "post_gyro_mag_std"
+  ],
+  "FV-Center12": [
+    "acc_mag_range",
+    "acc_mag_max",
+    "acc_mag_std",
+    "gyro_mag_p95",
+    "gyro_mag_mean",
+    "jerk_p95",
+    "jerk_std",
+    "tilt_delta_p95",
+    "post_acc_mag_std",
+    "post_gyro_mag_std",
+    "impact_distance_from_center",
+    "gyro_peak_distance_from_center"
+  ],
+  "hard_negative_score_features": [
+    "jerk_p95",
+    "jerk_std",
+    "acc_mag_std",
+    "acc_mag_range",
+    "tilt_delta_p95",
+    "tilt_delta_max",
+    "ay_range",
+    "ay_std",
+    "gyro_mag_p95",
+    "gyro_mag_max"
+  ],
+  "notes": {
+    "summary_source": "C:\\Users\\ADMIN\\Desktop\\ds-fall\\outputs\\reports\\ml_feature_analysis_25hz\\summary_feature_matrix.csv",
+    "benchmark": "BITS/WEDA only, 25 Hz, 2-second event-centered, tilt12",
+    "direction": "Frozen reference direction probabilities from summary_feature_matrix.csv",
+    "architecture_equivalence": "Stage-2 FV runs train a logistic-regression verifier Dense(1) and linear logit fusion on frozen DS-Fall-RD fall logits. This is functionally equivalent to the requested frozen DS-Fall-RD-FV head."
+  }
+}

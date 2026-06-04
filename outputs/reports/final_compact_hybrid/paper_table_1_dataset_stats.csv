@@ -1,0 +1,3 @@
+dataset,sampling_rate_hz,window_seconds,input_shape,n_windows,n_fall,n_nonfall,n_supervised_direction
+bits,25,2,50 x 12,3560,325,3235,244
+weda,25,2,50 x 12,1895,350,1545,350

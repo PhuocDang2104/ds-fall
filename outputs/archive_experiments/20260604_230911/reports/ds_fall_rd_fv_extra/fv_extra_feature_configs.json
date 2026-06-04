@@ -1,0 +1,42 @@
+{
+  "summary_source": "C:\\Users\\ADMIN\\Desktop\\ds-fall\\outputs\\reports\\ml_feature_analysis_25hz\\summary_feature_matrix.csv",
+  "Lite10": [
+    "acc_mag_range",
+    "acc_mag_max",
+    "acc_mag_std",
+    "gyro_mag_p95",
+    "gyro_mag_mean",
+    "jerk_p95",
+    "jerk_std",
+    "tilt_delta_p95",
+    "post_acc_mag_std",
+    "post_gyro_mag_std"
+  ],
+  "AxisHard10": [
+    "ay_std",
+    "ay_range",
+    "jerk_p95",
+    "jerk_std",
+    "acc_mag_std",
+    "acc_mag_range",
+    "gyro_mag_max",
+    "gyro_mag_range",
+    "tilt_delta_p95",
+    "post_acc_mag_std"
+  ],
+  "hard_negative_score_features": [
+    "ay_std",
+    "ay_range",
+    "jerk_p95",
+    "jerk_std",
+    "acc_mag_std",
+    "acc_mag_range",
+    "gyro_mag_max",
+    "gyro_mag_range",
+    "tilt_delta_p95",
+    "post_acc_mag_std"
+  ],
+  "hard_negative_definition": "top 20% WEDA non-fall train/val by rank-normalized AxisHard10 motion score",
+  "benchmark": "BITS/WEDA only, 25 Hz, 2-second event-centered, existing split",
+  "direction_policy": "Direction probabilities are copied from DS-Fall-RD A5 reference columns and are never changed."
+}

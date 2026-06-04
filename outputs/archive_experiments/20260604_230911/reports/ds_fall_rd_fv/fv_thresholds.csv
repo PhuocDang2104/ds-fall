@@ -1,0 +1,7 @@
+run_id,features,fusion,hard_negative_weight,status,threshold,t_deep,t_lr,alpha_gate,reason
+FV1_LITE10_AND,FV-Lite10,and,2.0,completed,,0.8899578326023536,0.005153382432911702,,
+FV2_LITE10_LOGIT_FUSION,FV-Lite10,logit_fusion,2.0,completed,0.9108080808080807,,,,
+FV3_CENTER12_LOGIT_FUSION,FV-Center12,logit_fusion,2.0,completed,0.2673737373737374,,,,
+FV4_LITE10_GATED_PRODUCT,FV-Lite10,gated_product,2.0,completed,0.19313131313131313,,,0.3,
+FV5_LITE10_LOGIT_FUSION_HN3,FV-Lite10,logit_fusion,3.0,completed,0.9108080808080807,,,,
+FV6_LITE10_LOGIT_FUSION_UNFREEZE_FALL,FV-Lite10,stage3_unfreeze_fall,2.0,not_run,,,,,Skipped because safe fall-head unfreezing would require rebuilding a trainable temporal FV graph with explicit fall-logit exposure and verifying unchanged direction outputs. This frozen-probability FV script completed FV1-FV5 and records FV6 as not run instead of applying an unsafe partial unfreeze.

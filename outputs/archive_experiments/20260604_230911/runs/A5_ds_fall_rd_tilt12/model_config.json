@@ -1,0 +1,17 @@
+{
+  "id": "A5",
+  "model_name": "ds_fall_rd",
+  "feature_set": "tilt12",
+  "direction_loss_type": "focal",
+  "lambda_fall": 1.0,
+  "lambda_direction": 1.5,
+  "focal_gamma": 2.0,
+  "augment": false,
+  "augment_strength": "light",
+  "fall_loss_weighted": false,
+  "input_shape": [
+    100,
+    12
+  ],
+  "learning_rate": 0.001
+}

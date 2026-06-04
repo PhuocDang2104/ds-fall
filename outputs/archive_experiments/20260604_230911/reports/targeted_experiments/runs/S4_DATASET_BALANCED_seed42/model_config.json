@@ -1,0 +1,25 @@
+{
+  "run_id": "S4_DATASET_BALANCED",
+  "group_id": "sampler",
+  "config_id": "S4",
+  "feature_set": "tilt12",
+  "width_multiplier": 1.0,
+  "shared_dense": 0,
+  "head_dense": 32,
+  "sampler": "dataset_balanced",
+  "fall_loss": "focal",
+  "alpha_fall": 1.0,
+  "lambda_dir": 1.0,
+  "fall_gamma": 1.0,
+  "direction_loss": "weighted_ce",
+  "adapter_type": "none",
+  "adapter_filters": 0,
+  "impact_position": 0.5,
+  "learning_rate": 0.001,
+  "notes": "",
+  "seed": 42,
+  "input_shape": [
+    50,
+    12
+  ]
+}

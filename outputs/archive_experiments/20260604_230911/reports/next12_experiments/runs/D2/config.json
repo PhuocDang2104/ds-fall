@@ -1,0 +1,16 @@
+{
+  "run_id": "D2",
+  "block": "direction_preserving_finetune",
+  "alpha_fall": 1.0,
+  "lambda_dir": 1.5,
+  "sampler": "current",
+  "feature_set": "tilt12",
+  "fall_loss": "weighted_ce",
+  "direction_loss": "weighted_ce",
+  "adapter_mode": "fall16",
+  "train_mode": "fall_head_finetune",
+  "beta_kd": 0.0,
+  "width_multiplier": 1.0,
+  "notes": "Fall adapter Conv1D 1x1 16 filters; encoder and direction branch frozen.",
+  "seed": 42
+}

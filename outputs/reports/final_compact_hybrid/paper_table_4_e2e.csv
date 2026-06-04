@@ -1,0 +1,4 @@
+Method,Fall Expert,Direction Expert,E3 E2E F1,E6 E2E F1,E7 E2E F1,Avg E2E F1,Edge suitability
+DS-Fall-RD A5 Hybrid Reference,Statistical Fall Expert,historical multitask A5 direction head,0.7998290598290598,0.7798319327731092,0.7925925925925927,0.7907511950649205,medium
+DS-Fall-RD Compact Hybrid,Statistical Fall Expert,LDX1 Wide-DSConv,0.7641093474426808,0.6857142857142856,0.8299081035923143,0.7599105789164269,high
+Statistical-ML Baseline,Best classical ML fall baseline,Best classical ML direction baseline,0.8293974225008708,0.8044961574373338,0.8551587301587302,0.8296841033656449,medium

@@ -1,0 +1,22 @@
+{
+  "run": {
+    "run_id": "FV10",
+    "verifier": "tiny_random_forest_10x_depth3",
+    "features": "AxisHard10",
+    "fusion": "and",
+    "threshold_rule": "max_f1_precision_065"
+  },
+  "features": [
+    "ay_std",
+    "ay_range",
+    "jerk_p95",
+    "jerk_std",
+    "acc_mag_std",
+    "acc_mag_range",
+    "gyro_mag_max",
+    "gyro_mag_range",
+    "tilt_delta_p95",
+    "post_acc_mag_std"
+  ],
+  "seed": 42
+}

@@ -1,0 +1,18 @@
+{
+  "repo_root": "C:\\Users\\ADMIN\\Desktop\\ds-fall",
+  "created_or_verified": [
+    "docs\\final",
+    "outputs\\final_e1_e7",
+    "outputs\\final_e1_e7\\reports",
+    "outputs\\final_e1_e7\\tables",
+    "outputs\\final_e1_e7\\figures",
+    "outputs\\final_e1_e7\\figures\\confusion_matrices",
+    "outputs\\final_e1_e7\\figures\\bar_charts",
+    "outputs\\final_e1_e7\\predictions",
+    "archive\\old_experiments",
+    "archive\\old_reports"
+  ],
+  "moved_logs": [],
+  "hard_delete": false,
+  "note": "Raw data, processed data, source code, scripts, notebooks, model artifacts, and reports were not deleted."
+}

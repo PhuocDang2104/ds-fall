@@ -1,0 +1,16 @@
+{
+  "run_id": "F1",
+  "block": "lightweight_branch_separation",
+  "alpha_fall": 1.0,
+  "lambda_dir": 1.5,
+  "sampler": "current",
+  "feature_set": "tilt12",
+  "fall_loss": "weighted_ce",
+  "direction_loss": "weighted_ce",
+  "adapter_mode": "none",
+  "train_mode": "head_specific_feature_routing",
+  "beta_kd": 0.0,
+  "width_multiplier": 0.5,
+  "notes": "Fall route uses mag_jerk9; direction route uses tilt12; width=0.5 to keep params <90k.",
+  "seed": 42
+}

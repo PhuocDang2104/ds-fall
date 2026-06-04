@@ -1,0 +1,8 @@
+run_id,params,added_params_over_reference,summary_feature_count,timing_features_used,direction_changed,status,notes
+REF_CURRENT_E3_ARTIFACT,65959.0,0.0,0,False,False,reference,Reference DS-Fall-RD A5WCEFW.
+FV1_LITE10_AND,65970.0,11.0,10,False,False,completed,AND fusion with Lite10 verifier.
+FV2_LITE10_LOGIT_FUSION,65973.0,14.0,10,False,False,completed,Preferred clean FV architecture.
+FV3_CENTER12_LOGIT_FUSION,65975.0,16.0,12,True,False,completed,Upper-bound with center timing features.
+FV4_LITE10_GATED_PRODUCT,65970.0,11.0,10,False,False,completed,Gated-product verifier.
+FV5_LITE10_LOGIT_FUSION_HN3,65973.0,14.0,10,False,False,completed,Same as FV2 with hard-negative weight 3.
+FV6_LITE10_LOGIT_FUSION_UNFREEZE_FALL,,,10,False,False,not_run,Skipped because safe fall-head unfreezing would require rebuilding a trainable temporal FV graph with explicit fall-logit exposure and verifying unchanged direction outputs. This frozen-probability FV script completed FV1-FV5 and records FV6 as not run instead of applying an unsafe partial unfreeze.

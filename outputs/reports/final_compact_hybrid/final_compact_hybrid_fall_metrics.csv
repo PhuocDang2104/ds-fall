@@ -1,0 +1,4 @@
+method,experiment_id,test_dataset,feature_input,feature_count,fall_precision,fall_recall,fall_f1,fall_accuracy,AUROC,AUPRC,TN,FP,FN,TP
+DS-Fall-RD Compact Hybrid,E3_BITS_WEDA_MIXED,bits+weda,event-window statistical features,132,0.8985507246376812,0.8493150684931506,0.8732394366197183,0.9745762711864406,0.9833567036997086,0.9355970977588354,628,7,11,62
+DS-Fall-RD Compact Hybrid,E6_E3_MIXED_TEST_BITS,bits,event-window statistical features,132,1.0,0.8125,0.896551724137931,0.9829545454545454,0.9877387152777778,0.9554014080837365,480,0,9,39
+DS-Fall-RD Compact Hybrid,E7_E3_MIXED_TEST_WEDA,weda,event-window statistical features,132,0.7666666666666667,0.92,0.8363636363636363,0.95,0.9816774193548388,0.9410734472049691,148,7,2,23

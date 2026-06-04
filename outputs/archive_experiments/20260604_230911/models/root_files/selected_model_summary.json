@@ -1,0 +1,13 @@
+{
+  "selected_id": "A5",
+  "fall_f1": 0.8611111111111112,
+  "direction_macro_f1": 0.6974097331240188,
+  "params": 65959,
+  "estimated_int8_kb": 64.4130859375,
+  "model_path": "outputs\\models\\ds_fall_rd_a5_best.keras",
+  "datasets": [
+    "bits",
+    "umafall",
+    "weda"
+  ]
+}

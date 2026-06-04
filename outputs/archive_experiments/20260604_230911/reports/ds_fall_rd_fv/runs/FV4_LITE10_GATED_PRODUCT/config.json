@@ -1,0 +1,68 @@
+{
+  "run_id": "FV4_LITE10_GATED_PRODUCT",
+  "config": {
+    "run_id": "FV4_LITE10_GATED_PRODUCT",
+    "features": "FV-Lite10",
+    "fusion": "gated_product",
+    "hard_negative_weight": 2.0,
+    "timing_features": false,
+    "notes": "Gated-product verifier."
+  },
+  "features": [
+    "acc_mag_range",
+    "acc_mag_max",
+    "acc_mag_std",
+    "gyro_mag_p95",
+    "gyro_mag_mean",
+    "jerk_p95",
+    "jerk_std",
+    "tilt_delta_p95",
+    "post_acc_mag_std",
+    "post_gyro_mag_std"
+  ],
+  "train_split_counts": {
+    "n": 3999,
+    "bits": {
+      "n": 2504,
+      "fall": 229,
+      "non_fall": 2275,
+      "direction_supervised": 172
+    },
+    "weda": {
+      "n": 1495,
+      "fall": 300,
+      "non_fall": 1195,
+      "direction_supervised": 300
+    }
+  },
+  "val_split_counts": {
+    "n": 748,
+    "bits": {
+      "n": 528,
+      "fall": 48,
+      "non_fall": 480,
+      "direction_supervised": 36
+    },
+    "weda": {
+      "n": 220,
+      "fall": 25,
+      "non_fall": 195,
+      "direction_supervised": 25
+    }
+  },
+  "test_split_counts": {
+    "n": 708,
+    "bits": {
+      "n": 528,
+      "fall": 48,
+      "non_fall": 480,
+      "direction_supervised": 36
+    },
+    "weda": {
+      "n": 180,
+      "fall": 25,
+      "non_fall": 155,
+      "direction_supervised": 25
+    }
+  }
+}

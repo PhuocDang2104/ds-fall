@@ -1,0 +1,7 @@
+run_id,threshold_rule,selected_rule,threshold_deep,threshold_verifier,threshold_final,fusion,features,verifier
+FV1A,max_f1_precision_065,max_f1_precision_065,0.5,0.00698614233050347,,and,Lite10,logistic_regression
+FV1B,min_fp_recall_088,min_fp_recall_088,0.0984866198291219,0.008592662839785742,,and,Lite10,logistic_regression
+FV7,max_f1_precision_065,max_f1_precision_065,0.5,0.007379614064423568,,and,AxisHard10,logistic_regression
+FV8,max_f1_precision_065,max_f1_precision_065,,,0.25,stacked_logit_fusion,AxisHard10,logistic_regression
+FV9,max_f1_precision_065,max_f1_precision_065,0.5056067415730336,0.001,,and,AxisHard10,decision_tree_depth3
+FV10,max_f1_precision_065,max_f1_precision_065,0.5056067415730336,0.001,,and,AxisHard10,tiny_random_forest_10x_depth3

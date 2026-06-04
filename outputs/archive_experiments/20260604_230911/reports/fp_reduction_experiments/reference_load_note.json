@@ -1,0 +1,7 @@
+{
+  "reference_model_load": "Keras model object is not deserializable because of Lambda layers, but weights load into the serializable equivalent architecture.",
+  "weights_path": "C:\\Users\\ADMIN\\Desktop\\ds-fall\\artifacts\\experiments_25hz_event\\E3_BITS_WEDA_MIXED\\best_model.keras",
+  "saved_predictions_path": "C:\\Users\\ADMIN\\Desktop\\ds-fall\\artifacts\\experiments_25hz_event\\E3_BITS_WEDA_MIXED\\predictions.csv",
+  "max_abs_fall_prob_diff_on_test": 1.1920928963404798e-07,
+  "mean_abs_fall_prob_diff_on_test": 3.3689398072686905e-10
+}

@@ -1,0 +1,16 @@
+{
+  "run_id": "D3",
+  "block": "direction_preserving_finetune",
+  "alpha_fall": 2.0,
+  "lambda_dir": 1.0,
+  "sampler": "current",
+  "feature_set": "tilt12",
+  "fall_loss": "weighted_ce",
+  "direction_loss": "ce",
+  "adapter_mode": "none",
+  "train_mode": "kd_finetune",
+  "beta_kd": 1.0,
+  "width_multiplier": 1.0,
+  "notes": "L3-style fall-prioritized fine-tune with direction distillation beta=1.",
+  "seed": 42
+}

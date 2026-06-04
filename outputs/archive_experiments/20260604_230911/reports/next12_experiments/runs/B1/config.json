@@ -1,0 +1,16 @@
+{
+  "run_id": "B1",
+  "block": "loss_sampler_near_reference",
+  "alpha_fall": 1.25,
+  "lambda_dir": 1.5,
+  "sampler": "current",
+  "feature_set": "tilt12",
+  "fall_loss": "weighted_ce",
+  "direction_loss": "weighted_ce",
+  "adapter_mode": "none",
+  "train_mode": "standard",
+  "beta_kd": 0.0,
+  "width_multiplier": 1.0,
+  "notes": "",
+  "seed": 42
+}

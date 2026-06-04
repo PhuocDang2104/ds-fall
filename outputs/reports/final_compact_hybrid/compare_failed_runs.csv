@@ -1,0 +1,4 @@
+stage,model,error
+fall_baseline,SVM_RBF,skipped because --include-svm was not set
+fall_baseline,XGBoost,"ModuleNotFoundError(""No module named 'xgboost'"")"
+direction_baseline,SVM_RBF,skipped because --include-svm was not set

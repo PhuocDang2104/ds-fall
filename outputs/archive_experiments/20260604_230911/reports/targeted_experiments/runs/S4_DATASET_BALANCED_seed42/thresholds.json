@@ -1,0 +1,18 @@
+{
+  "global": 0.7299999999999996,
+  "val_best_fall_f1": 0.8,
+  "dataset": {
+    "bits": {
+      "best_threshold": 0.8499999999999996,
+      "val_fall_f1": 0.8172043010752689,
+      "precision": 0.8444444444444444,
+      "recall": 0.7916666666666666
+    },
+    "weda": {
+      "best_threshold": 0.6999999999999996,
+      "val_fall_f1": 0.78125,
+      "precision": 0.6410256410256411,
+      "recall": 1.0
+    }
+  }
+}

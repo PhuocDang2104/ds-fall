@@ -1,0 +1,25 @@
+{
+  "run_id": "W125_WIDTH",
+  "group_id": "compactness",
+  "config_id": "W125",
+  "feature_set": "tilt12",
+  "width_multiplier": 1.25,
+  "shared_dense": 0,
+  "head_dense": 32,
+  "sampler": "current",
+  "fall_loss": "weighted_ce",
+  "alpha_fall": 2.0,
+  "lambda_dir": 1.0,
+  "fall_gamma": 2.0,
+  "direction_loss": "ce",
+  "adapter_type": "none",
+  "adapter_filters": 0,
+  "impact_position": 0.5,
+  "learning_rate": 0.001,
+  "notes": "",
+  "seed": 42,
+  "input_shape": [
+    50,
+    12
+  ]
+}

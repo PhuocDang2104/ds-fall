@@ -1,0 +1,21 @@
+{
+  "run": {
+    "run_id": "HYB_GB_Axis",
+    "expert": "GB",
+    "feature_set": "Axis",
+    "upper_bound": false
+  },
+  "features": [
+    "acc_mag_range",
+    "acc_mag_max",
+    "acc_mag_std",
+    "jerk_p95",
+    "jerk_std",
+    "gyro_mag_p95",
+    "gyro_mag_max",
+    "ay_std",
+    "ay_range",
+    "post_acc_mag_std"
+  ],
+  "seed": 42
+}

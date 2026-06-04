@@ -1,0 +1,16 @@
+{
+  "run_id": "HN3",
+  "method": "two_stage_fall_branch_finetune",
+  "hard_negative_source": "prediction_rule",
+  "hard_negative_weight": 2.0,
+  "alpha_fall": 1.0,
+  "lambda_dir": 1.5,
+  "beta_kd": 0.0,
+  "train_mode": "fall_branch_finetune",
+  "epochs": 15,
+  "patience": 5,
+  "learning_rate": 0.0002,
+  "seed": 42,
+  "train_seconds": 8.838343800001894,
+  "params": 65959
+}

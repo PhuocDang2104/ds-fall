@@ -1,0 +1,6 @@
+{
+  "reference": "DS-Fall-RD A5WCEFW E3 weights loaded into serializable equivalent architecture",
+  "scaler": "C:\\Users\\ADMIN\\Desktop\\ds-fall\\artifacts\\experiments_25hz_event\\E3_BITS_WEDA_MIXED\\scaler.pkl",
+  "weights": "C:\\Users\\ADMIN\\Desktop\\ds-fall\\artifacts\\experiments_25hz_event\\E3_BITS_WEDA_MIXED\\best_model.keras",
+  "limitation": "Keras artifact cannot be deserialized as a full model because of Lambda layers; weights are loaded by name-compatible serializable layers."
+}

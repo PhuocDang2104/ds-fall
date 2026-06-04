@@ -1,0 +1,13 @@
+run_id,block,alpha_fall,lambda_dir,sampler,feature_set,fall_loss,direction_loss,adapter_mode,train_mode,beta_kd,width_multiplier,notes
+B1,loss_sampler_near_reference,1.25,1.5,current,tilt12,weighted_ce,weighted_ce,none,standard,0.0,1.0,
+B2,loss_sampler_near_reference,1.5,1.5,current,tilt12,weighted_ce,weighted_ce,none,standard,0.0,1.0,
+B3,loss_sampler_near_reference,1.25,1.25,current,tilt12,weighted_ce,weighted_ce,none,standard,0.0,1.0,
+C1,loss_sampler_near_reference,1.0,1.5,dataset_balanced,tilt12,weighted_ce,weighted_ce,none,standard,0.0,1.0,
+C2,loss_sampler_near_reference,1.25,1.5,dataset_balanced,tilt12,weighted_ce,weighted_ce,none,standard,0.0,1.0,
+C3,loss_sampler_near_reference,1.5,1.5,dataset_balanced,tilt12,weighted_ce,weighted_ce,none,standard,0.0,1.0,
+D1,direction_preserving_finetune,1.0,1.5,current,tilt12,weighted_ce,weighted_ce,none,fall_head_finetune,0.0,1.0,Old Lambda checkpoint is not loadable; starts from an internally retrained serializable reference teacher.
+D2,direction_preserving_finetune,1.0,1.5,current,tilt12,weighted_ce,weighted_ce,fall16,fall_head_finetune,0.0,1.0,Fall adapter Conv1D 1x1 16 filters; encoder and direction branch frozen.
+D3,direction_preserving_finetune,2.0,1.0,current,tilt12,weighted_ce,ce,none,kd_finetune,1.0,1.0,L3-style fall-prioritized fine-tune with direction distillation beta=1.
+D4,direction_preserving_finetune,2.0,1.0,current,tilt12,weighted_ce,ce,none,kd_finetune,2.0,1.0,L3-style fall-prioritized fine-tune with direction distillation beta=2.
+E1,lightweight_branch_separation,1.0,1.5,current,tilt12,weighted_ce,weighted_ce,both16,standard,0.0,1.0,
+F1,lightweight_branch_separation,1.0,1.5,current,tilt12,weighted_ce,weighted_ce,none,head_specific_feature_routing,0.0,0.5,Fall route uses mag_jerk9; direction route uses tilt12; width=0.5 to keep params <90k.

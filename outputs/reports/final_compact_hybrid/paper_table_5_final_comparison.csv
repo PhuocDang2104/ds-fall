@@ -1,0 +1,3 @@
+Model,Fall feature type,Direction model,Direction params,Direction param reduction,Fall E7 F1,Direction avg F1,E2E avg F1,Limitation
+DS-Fall-RD Compact Hybrid,event-window statistical features,LDX1 Wide-DSConv,5699,0.913597841083097,0.8363636363636363,0.8680792264579318,0.7599105789164269,paper-safe seed selected by validation; compact direction is below historical A5 if so observed
+DS-Fall-RD A5 Hybrid Reference,event-window statistical features,historical multitask A5 direction head,65959,0.0,0.8363636363636363,0.8902482317636582,0.7907511950649205,larger temporal direction expert

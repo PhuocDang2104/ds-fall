@@ -1,0 +1,9 @@
+{
+  "purpose": "internal serializable reference teacher for D1-D4 only",
+  "seed": 42,
+  "epochs": 80,
+  "patience": 20,
+  "train_seconds": 88.42640430000029,
+  "params": 65959,
+  "note": "Old E3 artifact could not be loaded because of Lambda-layer deserialization; teacher was retrained with serializable ChannelSlice layers."
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "L4_FALL_WCE",
+  "group_id": "loss",
+  "config_id": "L4",
+  "feature_set": "tilt12",
+  "width_multiplier": 1.0,
+  "shared_dense": 0,
+  "head_dense": 32,
+  "sampler": "current",
+  "fall_loss": "weighted_ce",
+  "alpha_fall": 1.5,
+  "lambda_dir": 0.75,
+  "fall_gamma": 2.0,
+  "direction_loss": "ce",
+  "adapter_type": "none",
+  "adapter_filters": 0,
+  "impact_position": 0.5,
+  "learning_rate": 0.001,
+  "notes": "",
+  "seed": 123,
+  "input_shape": [
+    50,
+    12
+  ]
+}

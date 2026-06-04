@@ -1,0 +1,7 @@
+python=3.11.9
+platform=Windows-10-10.0.26100-SP0
+torch_available=True
+torch_version=2.11.0+cpu
+tensorflow_available=False
+tensorflow_import_error=ModuleNotFoundError("No module named 'tensorflow.python'")
+cwd=C:\Users\ADMIN\Desktop\ds-fall

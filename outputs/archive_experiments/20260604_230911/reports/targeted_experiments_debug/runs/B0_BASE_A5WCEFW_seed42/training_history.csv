@@ -1,0 +1,2 @@
+epoch,direction_output_accuracy,direction_output_loss,fall_output_accuracy,fall_output_loss,loss,val_direction_output_accuracy,val_direction_output_loss,val_fall_output_accuracy,val_fall_output_loss,val_loss,val_fall_f1,val_direction_macro_f1,val_domain_score,learning_rate
+1,0.17104275524616241,0.13845163583755493,0.8659664988517761,0.3354529142379761,0.5426881909370422,0.0882352963089943,0.10292164236307144,0.9024063944816589,0.6569089293479919,0.7413746118545532,0.0,0.15535444947209653,0.15535444947209653,0.0010000000474974513

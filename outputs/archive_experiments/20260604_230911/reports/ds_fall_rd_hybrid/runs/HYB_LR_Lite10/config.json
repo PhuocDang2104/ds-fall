@@ -1,0 +1,21 @@
+{
+  "run": {
+    "run_id": "HYB_LR_Lite10",
+    "expert": "LR",
+    "feature_set": "Lite10",
+    "upper_bound": false
+  },
+  "features": [
+    "acc_mag_range",
+    "acc_mag_max",
+    "acc_mag_std",
+    "gyro_mag_p95",
+    "gyro_mag_mean",
+    "jerk_p95",
+    "jerk_std",
+    "tilt_delta_p95",
+    "post_acc_mag_std",
+    "post_gyro_mag_std"
+  ],
+  "seed": 42
+}

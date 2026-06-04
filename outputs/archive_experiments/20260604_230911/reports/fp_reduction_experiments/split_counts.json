@@ -1,0 +1,7 @@
+{
+  "train": 3999,
+  "val": 748,
+  "test": 708,
+  "test_bits": 528,
+  "test_weda": 180
+}

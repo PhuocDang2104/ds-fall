@@ -1,0 +1,21 @@
+run_id,model_type,feature_set,fall_expert,number_features,estimated_params_or_nodes,number_trees,max_depth,edge_suitability,complexity_notes,upper_bound_timing
+DS_Fall_RD_A5_reference,baseline_deep_temporal,temporal_tilt12,A5_deep_fall_head,12.0,65959.0,0.0,,high,A5 reference.,
+Best_FV1_Lite10_AND,baseline_fv_guard,Lite10,LR_AND_verifier,10.0,65970.0,0.0,,high,Prior FV1 baseline.,
+Classical_Fall_Only_Best,baseline_classical_fall_only,summary_features,gradient_boosting,,,,,analysis_only,Imported from ml_feature_analysis comparison.,
+HYB_LR_Lite10,hybrid_ml_fall_a5_direction,Lite10,LR,10.0,11.0,0.0,0.0,high,LR 11 weights plus scaler.,False
+HYB_DT_Lite10,hybrid_ml_fall_a5_direction,Lite10,DT,10.0,15.0,1.0,3.0,high,"DecisionTree depth=3, leaves=8.",False
+HYB_RF_Lite10,hybrid_ml_fall_a5_direction,Lite10,RF,10.0,2452.0,50.0,5.0,medium,"RF 50 trees depth<=5, total nodes=2452.",False
+HYB_GB_Lite10,hybrid_ml_fall_a5_direction,Lite10,GB,10.0,1436.0,100.0,3.0,medium,GradientBoosting trees=100.,False
+HYB_HGB_Lite10,hybrid_ml_fall_a5_direction,Lite10,HGB,10.0,100.0,100.0,,low,HistGradientBoosting iterations=100.,False
+HYB_LR_Axis,hybrid_ml_fall_a5_direction,Axis,LR,10.0,11.0,0.0,0.0,high,LR 11 weights plus scaler.,False
+HYB_DT_Axis,hybrid_ml_fall_a5_direction,Axis,DT,10.0,15.0,1.0,3.0,high,"DecisionTree depth=3, leaves=8.",False
+HYB_RF_Axis,hybrid_ml_fall_a5_direction,Axis,RF,10.0,2464.0,50.0,5.0,medium,"RF 50 trees depth<=5, total nodes=2464.",False
+HYB_GB_Axis,hybrid_ml_fall_a5_direction,Axis,GB,10.0,1472.0,100.0,3.0,medium,GradientBoosting trees=100.,False
+HYB_HGB_Axis,hybrid_ml_fall_a5_direction,Axis,HGB,10.0,100.0,100.0,,low,HistGradientBoosting iterations=100.,False
+HYB_LR_FullNoTiming,hybrid_ml_fall_a5_direction,FullNoTiming,LR,132.0,133.0,0.0,0.0,high,LR 133 weights plus scaler.,False
+HYB_RF_FullNoTiming,hybrid_ml_fall_a5_direction,FullNoTiming,RF,132.0,2562.0,50.0,5.0,medium,"RF 50 trees depth<=5, total nodes=2562.",False
+HYB_GB_FullNoTiming,hybrid_ml_fall_a5_direction,FullNoTiming,GB,132.0,1408.0,100.0,3.0,medium,GradientBoosting trees=100.,False
+HYB_HGB_FullNoTiming,hybrid_ml_fall_a5_direction,FullNoTiming,HGB,132.0,100.0,100.0,,low,HistGradientBoosting iterations=100.,False
+HYB_RF_FullTiming,hybrid_ml_fall_a5_direction,FullTiming,RF,136.0,2420.0,50.0,5.0,medium,"RF 50 trees depth<=5, total nodes=2420.",True
+HYB_GB_FullTiming,hybrid_ml_fall_a5_direction,FullTiming,GB,136.0,1432.0,100.0,3.0,medium,GradientBoosting trees=100.,True
+HYB_HGB_FullTiming,hybrid_ml_fall_a5_direction,FullTiming,HGB,136.0,100.0,100.0,,low,HistGradientBoosting iterations=100.,True

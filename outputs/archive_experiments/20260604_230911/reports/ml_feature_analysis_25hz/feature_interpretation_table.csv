@@ -1,0 +1,6 @@
+feature_group,examples,physical meaning,paper interpretation
+fall_top_features,"impact_distance_from_center, gyro_mag_p95, jerk_std, acc_mag_std, acc_mag_min, pre_ax_mean, acc_mag_max, acc_mag_range, tilt_delta_p95, acc_mag_peak_value","impact strength, abrupt acceleration, event timing, post-impact instability",fall detection is dominated by impact/jerk/timing evidence
+direction_top_features,"gx_median, pitch_max, ax_range, ay_std, acc_mag_p95, gy_mean, gy_median, gz_median, gy_final_initial, ax_min","signed axis motion, roll/pitch transition, gyroscope pattern",direction depends on signed orientation and rotation evidence
+features_common_to_both,az_min,features useful for both event detection and motion geometry,some summary features bridge fall and direction but do not replace temporal multitask learning
+fall_specific_features,"impact_distance_from_center, gyro_mag_p95, acc_mag_std, acc_mag_min, pre_ax_mean, acc_mag_range, tilt_delta_p95, acc_mag_peak_value, az_std, gyro_mag_range","magnitude, jerk, impact timing",classical fall-only classifiers can exploit compact impact summaries
+direction_specific_features,"gx_median, pitch_max, ay_std, acc_mag_p95, gy_mean, gy_median, gz_median, gy_final_initial, ax_min, post_roll_mean",signed roll/pitch/gyro differences,rotation-aware signed features explain direction robustness

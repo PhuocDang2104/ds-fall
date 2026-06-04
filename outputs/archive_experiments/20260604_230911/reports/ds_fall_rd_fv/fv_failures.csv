@@ -1,0 +1,2 @@
+run_id,status,reason
+FV6_LITE10_LOGIT_FUSION_UNFREEZE_FALL,not_run,Skipped because safe fall-head unfreezing would require rebuilding a trainable temporal FV graph with explicit fall-logit exposure and verifying unchanged direction outputs. This frozen-probability FV script completed FV1-FV5 and records FV6 as not run instead of applying an unsafe partial unfreeze.

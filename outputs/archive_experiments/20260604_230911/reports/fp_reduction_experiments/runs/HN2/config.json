@@ -1,0 +1,16 @@
+{
+  "run_id": "HN2",
+  "method": "hard_negative_weighted_ce",
+  "hard_negative_source": "prediction_rule",
+  "hard_negative_weight": 2.0,
+  "alpha_fall": 1.0,
+  "lambda_dir": 1.5,
+  "beta_kd": 0.0,
+  "train_mode": "standard",
+  "epochs": 25,
+  "patience": 7,
+  "learning_rate": 0.001,
+  "seed": 42,
+  "train_seconds": 47.00557860000117,
+  "params": 65959
+}
